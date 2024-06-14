@@ -11,7 +11,7 @@ export const handleSendData = async (randPunches, wif, referredBy, wallet) => {
     referredBy: referredBy,
   };
 
-  const token = sign(data, "scrt_key");
+  const token = sign(data, `${import.meta.env.VITE_JWT_SECRET}`);
   const userWon = randPunches > 13;
   if (userWon) {
     const finishPayload = {
