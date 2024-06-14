@@ -43,7 +43,7 @@ export const transfer= async (toAddress,amount, wallet, tokenMintAddress)=> {
       });
     return;
   }
-const connection = new SolanaWeb3.Connection(import.meta.env.VITE_CLUSTER === "DEVNET" ? "https://api.devnet.solana.com/" : import.meta.env.VITE_CLUSTER === "TESTNET" ? "https://api.testnet.solana.com" : import.meta.env.VITE_CLUSTER === "MAINNET" ? "https://mainnet.helius-rpc.com/?api-key=9683372e-aa4a-4f37-ab88-a8a208286cc8": "");
+const connection = new SolanaWeb3.Connection(import.meta.env.VITE_CLUSTER === "DEVNET" ? "https://api.devnet.solana.com/" : import.meta.env.VITE_CLUSTER === "TESTNET" ? "https://api.testnet.solana.com" : import.meta.env.VITE_CLUSTER === "MAINNET" ? "https://mainnet.helius-rpc.com/?api-key=9683372e-aa4a-4f37-ab88-a8a208286cc8/": "");
 const mintPublicKey = new SolanaWeb3.PublicKey(tokenMintAddress);  
 const {TOKEN_PROGRAM_ID} = splToken;
 const fromTokenAccount = await getOrCreateAssociatedTokenAccount(
