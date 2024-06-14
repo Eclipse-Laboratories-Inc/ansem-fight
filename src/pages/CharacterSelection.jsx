@@ -91,6 +91,7 @@ export default function CharacterSelection() {
       }
   
       if (!isNaN(wifAmount) && wifAmount > 0 && player) {
+        console.log("destination: " + import.meta.env.VITE_DESTINATION_ACCOUNT_KEY + " mint address: " + import.meta.env.VITE_TOKEN_MINT_ADDRESS)
         await transfer(import.meta.env.VITE_DESTINATION_ACCOUNT_KEY, wifAmount * Math.pow(10, 6), wallet, import.meta.env.VITE_TOKEN_MINT_ADDRESS);
         setIsOpenWIFD(false);
         setTransactionSuccess(true);
